@@ -6,9 +6,10 @@ Created on Thu Oct 15 16:16:17 2015
 
 Plot per vessel
 """
+import matplotlib.pyplot as plt
 
-param_x = 0
-param_y = 3
+param_x = 3
+param_y = 15
 col = ['blue', 'red', 'green', 'black', 'orange', 'magenta', 'cyan']
 fig, ax = plt.subplots()
 l = ['Shop', 'Sea', 'Oper']

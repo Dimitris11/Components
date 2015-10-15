@@ -8,7 +8,7 @@ Created on Wed Oct 14 13:16:05 2015
 #from os import path
 import numpy as np
 import csv
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #import scipy.io as sio
 
 vessels = ['Philippe','Felix', 'Theodora', 'Victor', 'Charles', 'Guillaume', 'Lara']
