@@ -8,18 +8,18 @@ Plot per vessel
 """
 
 param_x = 0
-param_y = 23
+param_y = 3
 col = ['blue', 'red', 'green', 'black', 'orange', 'magenta', 'cyan']
 fig, ax = plt.subplots()
 l = ['Shop', 'Sea', 'Oper']
 for a, vessel in enumerate(vessels): 
-    x = v[vessel][1][param_x]
-    y = v[vessel][1][param_y]
+    x = v[vessel][0][param_x]
+    y = v[vessel][0][param_y]
     fit = np.polyfit(x,y,1)
     fit_fn = np.poly1d(fit) 
     ax.plot(x, y, 'o', color = col[a], label = vessel)
     ax.plot(x, fit_fn(x), '-',color= col[a])
-ax.set_ylim([0.9, 1.0])
+#ax.set_ylim([0.9, 1.0])
 ax.set_xlabel(headers[param_x]) 
 ax.set_ylabel(headers[param_y]) 
 #ax.set_title('title');

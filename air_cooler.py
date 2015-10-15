@@ -79,7 +79,7 @@ for vessel in vessels:
     np.savez(vessel+'.npz', **mat)
     
     #a = np.load('philippe.npy').item() # to load the npy file
-headers.extend(['Tsc_Ain_av','Tsc_Aout_av', 'Tsc_Win_av', 'Tsc_Wout_av', \
+headers.extend(['Tac_Ain_av','Tac_Aout_av', 'Tac_Win_av', 'Tac_Wout_av', \
 'DP_ac_av', 'DTaw', 'DTww', 'DTaw/Tamb', 'DTww/Tamb', 'Effectiveness' ])
 
 lara = v['Lara']
