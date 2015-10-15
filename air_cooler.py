@@ -37,7 +37,8 @@ for vessel in vessels:
     dtww = shop[17]-shop[16]
     dtaw_Ta = dtaw/shop[2]
     dtww_Ta = dtww/shop[2]
-    shop = np.row_stack((shop,dtaw, dtww, dtaw_Ta, dtww_Ta))
+    eff = (shop[14]-shop[15])/(shop[14]-shop[16])
+    shop = np.row_stack((shop,dtaw, dtww, dtaw_Ta, dtww_Ta, eff))
     
     sea = np.array(sea[:], dtype = 'float')
     ac_ain=(sea[4]+sea[5])/2.
@@ -50,7 +51,8 @@ for vessel in vessels:
     dtww = sea[17]-sea[16]
     dtaw_Ta = dtaw/sea[2]
     dtww_Ta = dtww/sea[2]
-    sea = np.row_stack((sea,dtaw, dtww, dtaw_Ta, dtww_Ta))
+    eff = (sea[14]-sea[15])/(sea[14]-sea[16])
+    sea = np.row_stack((sea,dtaw, dtww, dtaw_Ta, dtww_Ta, eff))
     
     oper = np.array(oper[:], dtype = 'float')
     ac_ain=(oper[4]+oper[5])/2.
@@ -63,7 +65,8 @@ for vessel in vessels:
     dtww = oper[17]-oper[16]
     dtaw_Ta = dtaw/oper[2]
     dtww_Ta = dtww/oper[2]
-    oper = np.row_stack((oper,dtaw, dtww, dtaw_Ta, dtww_Ta)) 
+    eff = (oper[14]-oper[15])/(oper[14]-oper[16])
+    oper = np.row_stack((oper,dtaw, dtww, dtaw_Ta, dtww_Ta,eff)) 
     
     mat['shop']=shop
     mat['sea']=sea
@@ -76,6 +79,8 @@ for vessel in vessels:
     np.savez(vessel+'.npz', **mat)
     
     #a = np.load('philippe.npy').item() # to load the npy file
+headers.extend(['Tsc_Ain_av','Tsc_Aout_av', 'Tsc_Win_av', 'Tsc_Wout_av', \
+'DP_ac_av', 'DTaw', 'DTww', 'DTaw/Tamb', 'DTww/Tamb', 'Effectiveness' ])
 
 lara = v['Lara']
 ph = v['Philippe']
