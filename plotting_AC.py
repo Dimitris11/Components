@@ -8,7 +8,7 @@ Plot per vessel
 """
 
 param_x = 0
-param_y = 23
+param_y = 18
 
 col = ['blue', 'red', 'green']
 l = ['Shop', 'Sea', 'Oper']
@@ -27,7 +27,7 @@ for i,vessel in enumerate(vessels):
         fit_fn = np.poly1d(fit) 
         ax.plot(x, y, 'o', color = col[a], label= l[a])
         ax.plot(x, fit_fn(x), '-',color= col[a])
-        ax.set_ylim([0.9, 1.0])
+#        ax.set_ylim([0, 1.0])
     ax.set_xlabel(headers[param_x]) 
     ax.set_ylabel(headers[param_y]) 
     ax.set_title(vessel);
